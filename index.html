@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VQ Quality & Compliance</title>
+  <meta name="description" content="Soluções especializadas em qualidade, segurança e conformidade para indústrias." />
+  <style>
+    :root{
+      --blue-900:#082b83;
+      --blue-800:#0d3aa8;
+      --blue-700:#1e5de0;
+      --text:#1d2951;
+      --muted:#5b6788;
+      --white:#ffffff;
+      --card:#ffffffee;
+      --shadow:0 18px 50px rgba(7, 25, 80, .16);
+      --max:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.10), transparent 20%),
+        radial-gradient(circle at 80% 15%, rgba(255,255,255,.12), transparent 18%),
+        linear-gradient(135deg, #06235f 0%, #0d3aa8 55%, #0f58df 100%);
+      min-height:100vh;
+    }
+    .overlay{
+      background:
+        radial-gradient(circle at left center, rgba(255,255,255,.06), transparent 22%),
+        radial-gradient(circle at 70% 80%, rgba(255,255,255,.08), transparent 28%);
+    }
+    .container{max-width:var(--max); margin:0 auto; padding:0 22px}
+    header{
+      position:sticky; top:0; z-index:20;
+      background:rgba(5, 24, 72, .68);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.10);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      min-height:76px; gap:18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; color:#fff; text-decoration:none;
+    }
+    .brand-badge{
+      width:46px; height:46px; border-radius:14px;
+      display:grid; place-items:center; font-weight:800;
+      background:linear-gradient(135deg, rgba(255,255,255,.22), rgba(255,255,255,.08));
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.15);
+    }
+    .brand-text strong{display:block; font-size:18px; letter-spacing:.4px}
+    .brand-text span{display:block; font-size:12px; opacity:.82}
+    nav ul{
+      display:flex; gap:22px; list-style:none; padding:0; margin:0;
+      align-items:center;
+    }
+    nav a{color:#fff; text-decoration:none; font-size:15px; opacity:.95}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      min-height:50px; padding:0 22px; border-radius:14px; text-decoration:none;
+      font-weight:700; border:1px solid transparent;
+      transition:.2s ease;
+    }
+    .btn-primary{background:#fff; color:var(--blue-900)}
+    .btn-outline{color:#fff; border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.05)}
+    .hero{
+      padding:82px 0 44px;
+      color:#fff;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:32px;
+      align-items:center;
+    }
+    .hero h1{
+      font-size:54px;
+      line-height:1.04;
+      margin:0 0 16px;
+    }
+    .hero p{
+      font-size:20px;
+      line-height:1.6;
+      color:rgba(255,255,255,.92);
+      max-width:720px;
+      margin:0 0 26px;
+    }
+    .hero-actions{
+      display:flex; flex-wrap:wrap; gap:14px;
+      margin-bottom:26px;
+    }
+    .hero-list{
+      display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:12px 20px;
+      max-width:760px;
+    }
+    .hero-list div{
+      background:rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      padding:14px 16px;
+      font-size:15px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.17), rgba(255,255,255,.08));
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .hero-panel{
+      background:rgba(255,255,255,.92);
+      color:var(--text);
+      border-radius:24px;
+      padding:28px;
+    }
+    .hero-panel h3{
+      margin:0 0 14px;
+      font-size:28px;
+      color:var(--blue-900);
+    }
+    .hero-panel ul{
+      margin:0; padding-left:20px; color:var(--muted);
+      line-height:1.8;
+    }
+    section{padding:34px 0}
+    .section-title{
+      color:#fff; text-align:center;
+      font-size:42px; margin:12px 0 12px;
+    }
+    .section-subtitle{
+      color:rgba(255,255,255,.9);
+      text-align:center; max-width:860px; margin:0 auto 28px;
+      font-size:19px; line-height:1.65;
+    }
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:24px;
+      margin-top:18px;
+    }
+    .card{
+      background:var(--card);
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      padding:28px 28px 24px;
+      border:1px solid rgba(255,255,255,.55);
+    }
+    .card h3{
+      font-size:28px; margin:0 0 18px; color:#24356d;
+    }
+    .icon{
+      width:70px; height:70px; border-radius:22px;
+      display:grid; place-items:center;
+      background:linear-gradient(135deg, #e7efff, #cddfff);
+      color:var(--blue-700);
+      font-size:34px; flex:0 0 70px;
+    }
+    .card-top{
+      display:flex; gap:18px; align-items:flex-start;
+      border-bottom:2px solid #dbe6ff; padding-bottom:16px; margin-bottom:16px;
+    }
+    .tag{
+      display:inline-block; padding:8px 12px; border-radius:999px;
+      background:#edf3ff; color:var(--blue-800); font-weight:700; font-size:13px;
+      margin:4px 8px 10px 0;
+    }
+    .card p, .card li{color:var(--muted); font-size:18px; line-height:1.6}
+    .card strong{color:#314379}
+    .card ul{margin:10px 0 0; padding-left:24px}
+    .process{
+      display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:18px;
+      margin-top:12px;
+    }
+    .step{
+      background:rgba(255,255,255,.92);
+      border-radius:24px; padding:24px; box-shadow:var(--shadow);
+    }
+    .step .num{
+      width:42px; height:42px; border-radius:50%;
+      display:grid; place-items:center;
+      background:linear-gradient(135deg, var(--blue-800), var(--blue-700));
+      color:#fff; font-weight:800; margin-bottom:12px;
+    }
+    .step h4{margin:0 0 8px; font-size:22px; color:#26366f}
+    .step p{margin:0; color:var(--muted); line-height:1.6}
+    .cta{
+      margin:20px 0 34px;
+      background:linear-gradient(135deg, rgba(255,255,255,.95), rgba(238,244,255,.95));
+      border-radius:34px; padding:34px; box-shadow:var(--shadow);
+      display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center;
+    }
+    .cta h3{margin:0 0 10px; font-size:34px; color:var(--blue-900)}
+    .cta p{margin:0; color:var(--muted); font-size:18px; line-height:1.6}
+    footer{
+      padding:18px 0 42px; color:rgba(255,255,255,.8); text-align:center;
+      font-size:14px;
+    }
+    .contact-box{
+      margin-top:12px; color:rgba(255,255,255,.94); text-align:center; font-size:16px;
+    }
+    @media (max-width: 1024px){
+      .hero-grid,.cta{grid-template-columns:1fr}
+      .cards,.process{grid-template-columns:1fr}
+      .hero h1{font-size:42px}
+      .hero-list{grid-template-columns:1fr}
+    }
+    @media (max-width: 760px){
+      nav ul{display:none}
+      .hero{padding-top:56px}
+      .hero h1{font-size:34px}
+      .hero p{font-size:18px}
+      .section-title{font-size:30px}
+      .section-subtitle{font-size:17px}
+      .card h3{font-size:24px}
+      .card p,.card li{font-size:17px}
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <header>
+      <div class="container nav">
+        <a href="#" class="brand">
+          <div class="brand-badge">VQ</div>
+          <div class="brand-text">
+            <strong>Quality & Compliance</strong>
+            <span>Qualidade, segurança e conformidade</span>
+          </div>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#processo">Como funciona</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a class="btn btn-primary" href="https://wa.me/5541995889317" target="_blank">WhatsApp</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <h1>Soluções especializadas em qualidade, segurança e conformidade para indústrias</h1>
+            <p>
+              Estruturamos sistemas, apoiamos auditorias, validamos processos e capacitamos equipes
+              para atender requisitos normativos e elevar a maturidade operacional da sua empresa.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#servicos">Ver serviços</a>
+              <a class="btn btn-outline" href="#contato">Solicitar contato</a>
+            </div>
+            <div class="hero-list">
+              <div>Implantação de sistemas de gestão</div>
+              <div>Auditorias e adequação regulatória</div>
+              <div>Validação de processos e limpeza</div>
+              <div>Treinamentos técnicos e in company</div>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="hero-panel">
+              <h3>Áreas de atuação</h3>
+              <ul>
+                <li>Dispositivos médicos</li>
+                <li>Alimentos e bebidas</li>
+                <li>Sistema de Gestão da Qualidade</li>
+                <li>Preparação para auditorias</li>
+                <li>Planos de ação e melhoria contínua</li>
+                <li>Treinamentos ISO, RDC, BPF e 5S</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicos">
+        <div class="container">
+          <h2 class="section-title">Serviços Ofertados</h2>
+          <p class="section-subtitle">
+            Um site profissional para apresentar com clareza tudo o que a empresa entrega, gerar mais confiança
+            e facilitar o contato com potenciais clientes.
+          </p>
+
+          <div class="cards">
+            <article class="card">
+              <div class="card-top">
+                <div class="icon">⚙️</div>
+                <div>
+                  <h3>Implantação de Sistemas</h3>
+                  <span class="tag">Dispositivos médicos</span>
+                  <span class="tag">Alimentos e bebidas</span>
+                </div>
+              </div>
+              <p><strong>Dispositivos médicos:</strong> ISO 13485 | RDC 665/2022</p>
+              <p><strong>Alimentos/Bebidas:</strong> ISO 9001 | ISO 22000 | RDC 275/2002</p>
+              <ul>
+                <li>Estruturação do SGQ</li>
+                <li>Procedimentos e registros</li>
+                <li>Implantação de 5S</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <div class="icon">📋</div>
+                <div>
+                  <h3>Auditorias e Adequação</h3>
+                </div>
+              </div>
+              <ul>
+                <li>Gap analysis</li>
+                <li>Plano de ação</li>
+                <li>Preparação para auditorias</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <div class="icon">✅</div>
+                <div>
+                  <h3>Validação de Processos</h3>
+                </div>
+              </div>
+              <ul>
+                <li>IQ | OQ | PQ</li>
+                <li>Validação de limpeza (CIP)</li>
+                <li>Protocolos e relatórios</li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <div class="card-top">
+                <div class="icon">🎓</div>
+                <div>
+                  <h3>Treinamentos</h3>
+                </div>
+              </div>
+              <ul>
+                <li>ISO 13485 | ISO 90001 | ISO 9001</li>
+                <li>RDC 665/2022 | RDC 275/2002</li>
+                <li>BPF</li>
+                <li>5S</li>
+                <li>In company</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="processo">
+        <div class="container">
+          <h2 class="section-title">Como funciona</h2>
+          <p class="section-subtitle">
+            Um fluxo simples para mostrar profissionalismo e deixar claro como o atendimento acontece.
+          </p>
+
+          <div class="process">
+            <div class="step">
+              <div class="num">1</div>
+              <h4>Diagnóstico</h4>
+              <p>Entendimento do cenário, da exigência regulatória e dos principais pontos críticos da operação.</p>
+            </div>
+            <div class="step">
+              <div class="num">2</div>
+              <h4>Avaliação</h4>
+              <p>Análise técnica dos processos, documentos, controles e nível atual de aderência.</p>
+            </div>
+            <div class="step">
+              <div class="num">3</div>
+              <h4>Plano de ação</h4>
+              <p>Definição de prioridades, adequações, responsáveis e próximos passos para implantação ou correção.</p>
+            </div>
+            <div class="step">
+              <div class="num">4</div>
+              <h4>Acompanhamento</h4>
+              <p>Suporte na execução, revisão dos resultados e preparação para auditorias e melhoria contínua.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato">
+        <div class="container">
+          <div class="cta">
+            <div>
+              <h3>Quer falar com a VQ?</h3>
+              <p>
+                Entre em contato pelo WhatsApp para avaliar sua necessidade e entender como podemos apoiar
+                sua empresa em qualidade, segurança e conformidade.
+              </p>
+            </div>
+            <div>
+              <a class="btn btn-primary" href="https://wa.me/5541995889317" target="_blank">Chamar no WhatsApp</a>
+            </div>
+          </div>
+          <div class="contact-box">
+            WhatsApp: (41) 99588-9317
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © 2026 VQ Quality & Compliance — Modelo de site institucional.
+    </footer>
+  </div>
+</body>
+</html>
