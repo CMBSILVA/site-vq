@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página não encontrada | VQ Quality & Compliance</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .error-page { min-height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 48px 24px }
+    .error-page h1 { font-family: var(--font-display); font-size: 72px; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 12px }
+    .error-page h2 { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 16px }
+    .error-page p { font-size: 16px; color: var(--gray-500); max-width: 440px; margin: 0 auto 32px; line-height: 1.7 }
+    .error-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-wrap">
+      <a href="/" class="brand" aria-label="VQ Quality & Compliance">
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="42" height="42" rx="11" fill="#1a56db"/><path d="M21 7L10 12.5V20.5C10 27 14.5 32.5 21 34C27.5 32.5 32 27 32 20.5V12.5L21 7Z" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="1.2"/><path d="M13.5 14.5L18.5 26L23.5 14.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="28" cy="20.5" r="5" stroke="#fff" stroke-width="2" fill="none" opacity=".9"/><line x1="31.2" y1="24" x2="33.8" y2="27" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".9"/><path d="M17.5 29.5L19.5 32L24 28" stroke="#25d366" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <div class="brand-label"><strong>VQ Quality & Compliance</strong><span>Qualidade · Segurança · Conformidade</span></div>
+      </a>
+      <nav aria-label="Menu principal">
+        <ul class="nav-links">
+          <li><a href="/servicos/">Serviços</a></li>
+          <li><a href="/processo/">Processo</a></li>
+          <li><a href="/contato/">Contato</a></li>
+          <li><a class="btn btn-primary btn-sm" href="/contato/">Solicitar Orçamento</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </header>
+  <main>
+    <div class="error-page">
+      <div>
+        <h1>404</h1>
+        <h2>Página não encontrada</h2>
+        <p>A página que você procura não existe ou foi movida. Confira os links abaixo para encontrar o que precisa.</p>
+        <div class="error-actions">
+          <a href="/" class="btn btn-primary btn-lg">Voltar ao início</a>
+          <a href="/contato/" class="btn btn-outline btn-lg">Falar conosco</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <p>© 2026 VQ Quality & Compliance · Consultoria em qualidade, segurança e conformidade para indústrias.</p>
+    </div>
+  </footer>
+  <script src="/main.js"></script>
+</body>
+</html>
