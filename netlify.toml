@@ -1,13 +1,6 @@
 [build]
   publish = "."
 
-# Desativa processamento que causa redirecionamentos extras
-[build.processing]
-  skip_processing = false
-
-[build.processing.html]
-  pretty_urls = false
-
 # Headers de segurança e cache
 [[headers]]
   for = "/*"
@@ -25,23 +18,3 @@
   for = "/main.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
-
-# Redireciona versões sem trailing slash para com trailing slash (301)
-# Isso evita conteúdo duplicado e alinha com a estrutura de pastas
-[[redirects]]
-  from = "/servicos"
-  to = "/servicos/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/processo"
-  to = "/processo/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/contato"
-  to = "/contato/"
-  status = 301
-  force = true
